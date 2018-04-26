@@ -1,0 +1,28 @@
+server {
+        listen 80;
+        server_name     www.exampl.com;
+        rewrite ^(.*)$  https://$host$1 permanent;
+        }
+
+
+server {
+    listen      443;
+    server_name  www.exampl.com;
+    root         /rails_apps/project-name/current/public;
+
+    passenger_enabled on;
+    rails_env    production;
+	ssl on;
+      ssl_certificate /etc/letsencrypt/live/www.exampl.com/fullchain.pem;
+      ssl_certificate_key /etc/letsencrypt/live/www.exampl.com/privkey.pem;
+
+    location = /50x.html {
+            root   html;
+                }
+
+    location / {
+#       add_header Access-Control-Allow-Origin *;
+           index index.html index.htm;
+        }
+
+}
