@@ -67,7 +67,9 @@ sudo dpkg --configure -a
 
 #上面 3 个步骤过后，Ruby 环境就安装好了，接下来安装 Rails
 
- gem install rails
+rm /home/rails/.rvm/gems/ruby-2.3.0/cache/marcel-0.3.2.gem
+gem install marcel
+gem install rails
 
 #然后测试安装是否正确
 
