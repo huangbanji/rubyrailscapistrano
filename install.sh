@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=`pwd`
+
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo mv sources.list /etc/apt
 
@@ -81,7 +83,10 @@ gem install passenger
 passenger-install-nginx-module
 
 sudo mkdir -p /opt/nginx/conf/sites-enabled 
-
+sudo mv /opt/nginx/conf/nginx.conf /opt/nginx/conf/nginx.conf.bak
+sudo mv $PATH/nginx.conf /opt/nginx/conf/
+sudo mv $PATH/nginx.conf.default /opt/nginx/conf/sites-enabled 
+sudo mv $PATH/nginx.conf.ssl /opt/nginx/conf/sites-enabled 
 
 #第二部分：安装capistrano
 
