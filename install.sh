@@ -83,7 +83,7 @@ passenger-install-nginx-module
 sudo mkdir -p /opt/nginx/conf/sites-enabled 
 sudo mv /opt/nginx/conf/nginx.conf /opt/nginx/conf/nginx.conf.bak
 sudo mv nginx.conf /opt/nginx/conf/
-sudo mv project-nginx.conf /opt/nginx/conf/sites-enabled 
+sudo mv nginx.conf.defaule /opt/nginx/conf/sites-enabled 
 
 
 #第二部分：安装capistrano
