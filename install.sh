@@ -93,6 +93,8 @@ sudo mv ${PROJECT_PATH}/nginx.conf.ssl /opt/nginx/conf/sites-enabled
 #第二部分：安装capistrano
 
 #安装
+rm /home/rails/.rvm/gems/ruby-2.3.0/cache/airbrussh-1.3.0.gem
+gem install airbrussh
 gem install capistrano
 cap --version
 gem install capistrano-ext
